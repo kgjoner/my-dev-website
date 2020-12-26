@@ -1,22 +1,41 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { useDispatch } from 'react-redux'
 import { Link } from "gatsby"
+import { updateSections } from "../store/actions"
+import { homeSections } from "../constants/systemTypes"
 
-import Layout from "../components/layout"
+import SEO from '../components/seo'
 import Image from "../components/image"
-import SEO from "../components/seo"
+import Hero from '../components/home/Hero'
+import Projects from '../components/home/Projects'
+import Presentation from '../components/home/Techs'
+import Blog from '../components/home/Blog'
+import Contact from '../components/home/Contact'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+const HomePage = () => {
+  const dispatch = useDispatch()
 
-export default IndexPage
+  useEffect(() => {
+    dispatch(updateSections(Object.values(homeSections).slice(1).map(section => ({
+      anchor: '#' + section,
+      value: section.charAt(0).toUpperCase() + section.slice(1),
+      depth: 2
+    }))))
+  })
+
+  return (
+    <>
+      <SEO />
+      <Hero />
+      <Projects />
+      <Presentation />
+      <Blog />
+      <Contact />
+      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+        <Image />
+      </div>
+    </>
+  )
+}
+
+export default HomePage

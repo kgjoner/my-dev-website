@@ -1,0 +1,73 @@
+nav.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	user-select: none;
+	/* font-family: 'B612 Mono'; */
+	font-family: 'Baloo 2';
+	font-size: 1.2rem;
+	padding: 0px;
+	height: 60px;
+}
+
+.navbar__menu {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-left: 0;
+	height: 60px;
+}
+
+.navbar__link {
+	list-style: none;
+	padding: 0 20px;
+	height: 50px;
+	color: var(--dark-color);
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 0.9em;
+	display: flex;
+	align-items: center;
+	position: relative;
+	text-transform: capitalize;
+}
+
+.navbar--transparent .navbar__link {
+	color: var(--bg-color);
+}
+
+.navbar__link::after {
+	content: ' ';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	border-bottom: 3px solid var(--main-color);
+}
+
+.navbar--transparent .navbar__link::after {
+	border-bottom: 1px solid var(--bg-color);
+}
+
+@media(hover: hover) {
+	.navbar__link:hover::after {
+		width: 100%;
+		left: 0;
+		transition: 0.5s;
+	}
+}
+
+
+.navbar__link--active::after {
+	width: 100%;
+	left: 0;
+	border-bottom: 3px solid var(--main-color);
+	color: var(--dark-color);
+}
+
+.navbar__link a,
+.navbar__link a:hover {
+	color: inherit;
+}
