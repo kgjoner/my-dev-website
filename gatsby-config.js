@@ -16,6 +16,15 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `B612 Mono`,
+          `Baloo 2`
+        ],
+        display: 'swap'
+      }
+    }, {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
