@@ -31,9 +31,9 @@ const HomePage = () => {
       <Presentation />
       <Blog />
       <Contact />
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+      {/* <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
         <Image />
-      </div>
+      </div> */}
     </>
   )
 }
