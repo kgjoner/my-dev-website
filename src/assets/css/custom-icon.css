@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'custicons';
+  src:  url('../icon/icomoon.ttf');
+  src:  url('../icon/icomoon.eot') format('embedded-opentype'),
+    url('../icon/icomoon.ttf') format('truetype'),
+    url('../icon/icomoon.woff') format('woff'),
+    url('../icon/icomoon.svg') format('svg');
+  }
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'custicons' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ficcionados:before {
+  content: "\66";
+}
+
+.icon-velgard:before {
+  content: "\76";
+}
+.icon-wattpad:before {
+  content: "\77";
+}
+
+.icon-book:before {
+  content: "\62";
+}
+.icon-quill:before {
+  content: "\71";
+}
+
+.icon-sweek:before {
+  content: "\73";
+  font-size: 1.4em;
+}
+
+.fa-github {
+  mask-image: url('../img/github.svg');
+  background-color: var(--dark-color);
+  width: 25px;
+  height: 25px;
+  mask-size: cover;
+}
+
+a:hover .fa-github {
+  background-color: #fff;
+}
+
+.fa-linkedin {
+  mask-image: url('../img/linkedin.svg');
+  background-color: var(--dark-color);
+  width: 20px;
+  height: 20px;
+  mask-size: cover;
+}
+
+a:hover .fa-linkedin {
+  background-color: #fff;
+}
+
+.fa-envelope {
+  mask-image: url('../img/envelope.svg');
+  background-color: var(--dark-color);
+  width: 20px;
+  height: 20px;
+  mask-size: cover;
+}
+
+a:hover .fa-envelope {
+  background-color: #fff;
+}

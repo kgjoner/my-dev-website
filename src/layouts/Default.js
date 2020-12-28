@@ -6,7 +6,7 @@ import './default.css'
 
 const Layout = ({ location, children }) => {
   return (
-    <>
+    <div className="app">
       <Header pathname={location.pathname} />
       <main>{children}</main>
       <footer style={{
@@ -16,7 +16,7 @@ const Layout = ({ location, children }) => {
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>
       </footer>
-    </>
+    </div>
   )
 }
 
