@@ -30,6 +30,14 @@ a {
   text-decoration: none !important;
 }
 
+button {
+  cursor: pointer;
+}
+
+figure {
+  margin: 0;
+}
+
 img.ficcionados {
   background-color: #1d7fd8;
 }
