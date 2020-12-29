@@ -3,8 +3,8 @@ import './footer.css'
 
 
 const Footer = () => (
-  <footer class="footer">
-    <span class="copyright">
+  <footer className="footer">
+    <span className="copyright">
       © {new Date().getFullYear()} Kaio Gabriel
     </span>
   </footer>

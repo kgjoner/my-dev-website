@@ -8,7 +8,6 @@ const System = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    console.log('system rerendered!')
     window.addEventListener('resize', checkWidth)
     window.addEventListener('keydown', setTabUser)
 
