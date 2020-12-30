@@ -30,9 +30,12 @@ export const updateMonitorActiveSection = (boolean) => {
 }
 
 export const updateSections = (newSections) => {
-  return {
-    type: SET_SECTIONS,
-    payload: newSections
+  return (dispatch) => {
+    dispatch({
+      type: SET_SECTIONS,
+      payload: newSections
+    })
+    dispatch(monitorScroll())
   }
 }
 
