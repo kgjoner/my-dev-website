@@ -18,7 +18,29 @@ module.exports = {
         name: `projects`,
         path: `${__dirname}/src/data/projects`,
       },
+    }, {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/data/posts`,
+      },
+    }, 
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: `post__anchor`,
+              removeAccents: true,
+              elements: [`h1`, `h2`, `h3`],
+            },
+          },
+        ],
+      },
     },
+    // `gatsby-transformer-remark`,
     `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
