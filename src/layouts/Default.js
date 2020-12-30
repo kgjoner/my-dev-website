@@ -7,7 +7,7 @@ import './default.css'
 
 const Layout = ({ location, children }) => {
   return (
-    <div className="app">
+    <div className="app" id="app">
       <Header pathname={location.pathname} />
       <main>{children}</main>
       <Footer />

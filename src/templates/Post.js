@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { graphql } from 'gatsby'
 import { updateSections } from '../store/actions'
 
-import NavDrawer from '../components/template/NavDrawer/NavDrawer'
+import NavDrawer from '../components/template/NavDrawer'
+import GoToTop from '../components/utils/GoToTop'
 import './post.css'
 
 
@@ -64,6 +65,8 @@ const Post = ({ data, location }) => {
           ></Disqus> */}
         </div>
       </div>
+
+      <GoToTop />
     </div>
   )
 }
