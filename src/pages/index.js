@@ -17,7 +17,7 @@ const HomePage = () => {
 
   useEffect(() => {
     dispatch(updateSections(Object.values(homeSections).slice(1).map(section => ({
-      anchor: '#' + section,
+      id: section,
       value: section.charAt(0).toUpperCase() + section.slice(1),
       depth: 2
     }))))

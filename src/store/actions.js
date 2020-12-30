@@ -103,14 +103,14 @@ export const checkActiveSection = () => {
     })
 
     if(currentActiveSection !== state.activeSection) {
-      const correctedActiveSection = currentActiveSection || state.sections[0].anchor.slice(1)
+      const correctedActiveSection = currentActiveSection || state.sections[0].id
       dispatch(updateActiveSection(correctedActiveSection))
     }
   }
 
   function getSectionsElementsLastToFirst(sections) {
     const sectionsElements = sections.map(section => {
-      return document.getElementById(section.anchor.slice(1))
+      return document.getElementById(section.id)
     })
     return sectionsElements.sort((a, b) => b.offsetTop - a.offsetTop)
   }
