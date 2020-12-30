@@ -65,15 +65,3 @@ a:hover .fa-github {
 a:hover .fa-linkedin {
   background-color: #fff;
 }
-
-.fa-envelope {
-  mask-image: url('../img/envelope.svg');
-  background-color: var(--dark-color);
-  width: 20px;
-  height: 20px;
-  mask-size: cover;
-}
-
-a:hover .fa-envelope {
-  background-color: #fff;
-}

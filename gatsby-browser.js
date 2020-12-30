@@ -5,8 +5,10 @@ import DefaultLayout from "./src/layouts/Default"
 import System from './src/components/controllers/System'
 import Scroll from './src/components/controllers/Scroll'
 import { store } from './src/store'
+
 import './global.css'
 import './src/assets/css/custom-icon.css'
+import 'font-awesome/css/font-awesome.css'
 
 
 export const wrapPageElement = ({ element, props }) => {

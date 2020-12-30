@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kaio G. Joner <contact@kgjoner.com>",
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "gatsby": "^2.26.1",
     "gatsby-image": "^2.5.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
