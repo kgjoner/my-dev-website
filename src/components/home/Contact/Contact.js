@@ -3,16 +3,26 @@ import axios from 'axios'
 import { useSelector } from 'react-redux'
 import { homeSections } from '../../../constants/systemTypes'
 
+import Notification from '../../utils/Notification'
 import './contact.css'
 
 const Contact = () => {
   const [ formName, setFormName ] = useState('')
   const [ formEmail, setFormEmail ] = useState('')
   const [ formMessage, setFormMessage ] = useState('')
+  const [ isLoading, setIsLoading ] = useState('')
+  const [ hasAlert, setHasAlert ] = useState(false)
+  const [ alertMessage, setAlertMessage ] = useState('')
+  const [ alertType, setAlertType ] = useState('')
   const windowWidth = useSelector(state => state.windowWidth)
 
-  function handleSubmit() {
+  function handleSubmit(e) {
+    e.preventDefault()
     setFormMessage(formMessage + ' /from .dev subdomain.')
+    setIsLoading(true)
+    setTimeout(() => {
+      
+    }, 3000)
     axios
       .post('/', encode({
           'form-name': 'Contact',
@@ -24,11 +34,23 @@ const Contact = () => {
           header: { 'Content-Type': 'application/x-www-form-urlencoded' }
         }
       )
-      // .then(() => this.$toasted.success('Message sent!', { icon: 'check' }))
       .then(() => {
+        setAlertMessage('Message has been sent!')
+        setAlertType('success')
         setFormName('')
         setFormEmail('')
         setFormMessage('')
+      })
+      .catch(() => {
+        setAlertMessage('Error: Message could NOT been sent!')
+        setAlertType('error')
+      })
+      .finally(() => {
+        setIsLoading(false)
+        setHasAlert(true)
+        setTimeout(() => {
+          setHasAlert(false)
+        }, 3000)
       })
     
 
@@ -145,12 +167,21 @@ const Contact = () => {
             </div>
 
             <div className="contact__input-group send">
-              <button type="submit">Send</button>
+              <button type="submit">
+                { isLoading
+                  ? <i className="fa fa-circle-o-notch contact__loading"></i>
+                  : 'Send'
+                }
+              </button>
             </div>
           </form>
         </div>
-
       </div>
+      <Notification 
+        visible={hasAlert}
+        message={alertMessage}
+        type={alertType}
+      />
     </section>
   )
 }

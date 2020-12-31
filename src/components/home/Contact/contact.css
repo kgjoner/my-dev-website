@@ -158,6 +158,20 @@
 	box-shadow: 0 0 0px 3px var(--main-color);
 }
 
+.contact__loading {
+	animation: spin 1s linear infinite;
+	font-size: 1.3rem;
+}
+
+@keyframes spin {
+	0%{
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 @media(max-width: 780px) {
 	.contact {
 		padding: 80px 10px;
