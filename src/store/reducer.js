@@ -10,7 +10,7 @@ import {
 
 
 export const initialState = {
-  windowWidth: window.innerWidth,
+  windowWidth: typeof window !== 'undefined' ? window.innerWidth : 1280,
   isHeaderTransparent: true,
   monitorActiveSection: true,
   sections: [],
