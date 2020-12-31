@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { graphql } from 'gatsby'
 import { updateSections } from '../store/actions'
 
+import SEO from '../components/seo'
 import NavDrawer from '../components/template/NavDrawer'
 import GoToTop from '../components/utils/GoToTop'
 import './post.css'
@@ -21,7 +22,11 @@ const Post = ({ data, location }) => {
     dispatch(updateSections(headings))
   }, [])
 
-  return (
+  return <>
+    <SEO 
+      title={frontmatter.title}
+      description={frontmatter.description}
+    />
     <div className="post">
       { windowWidth && windowWidth > 780
         ? <aside className="post__menu">
@@ -68,7 +73,7 @@ const Post = ({ data, location }) => {
 
       <GoToTop />
     </div>
-  )
+  </>
 }
 
 export const pageQuery = graphql`
@@ -80,6 +85,7 @@ export const pageQuery = graphql`
         publishedAt
         slug
         title
+        description
       }
       headings {
         id

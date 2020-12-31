@@ -4,6 +4,7 @@ publishedAt: sep 01, 2020
 date: "2020-09-01"
 slug: making-a-jamstack-blog-with-gridsome
 title: Making a JAMstack blog with Gridsome
+description: A JAMstack blog is fast, reliable and secure. We can do it one using Vue with Gridsome.
 
 ---
 
