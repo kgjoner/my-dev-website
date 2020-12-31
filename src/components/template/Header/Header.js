@@ -5,6 +5,7 @@ import { homeSections, headerHeight } from '../../../constants/systemTypes'
 import { scrollPage } from '../../../store/actions'
 
 import Navbar from '../Navbar'
+import NavDrawer from '../NavDrawer'
 import Logo from '../../utils/Logo'
 import './header.css'
 
@@ -48,17 +49,14 @@ const Header = ({ pathname = '' }) => {
             light={isHeaderTransparent}
           />
           <Navbar pathname={pathname} />
-          {/* <NavDrawer 
-            v-if="wasMounted && windowWidth && windowWidth <= 780"
-            v-slot="{ toggleDrawer }"
-          >
-            <button 
-              class="header__action" 
-              @click="toggleDrawer"
-            >
-              <i class="header__icon fa fa-bars"></i>
-            </button>
-          </NavDrawer> */}
+          { windowWidth && windowWidth <= 780
+            ? <NavDrawer pathname={pathname}>
+                <button class="header__action">
+                  <i class="header__icon fa fa-bars"></i>
+                </button>
+              </NavDrawer>
+            : null
+          }
         </div>
       </div>
     </header>
