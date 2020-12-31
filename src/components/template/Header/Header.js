@@ -51,8 +51,8 @@ const Header = ({ pathname = '' }) => {
           <Navbar pathname={pathname} />
           { windowWidth && windowWidth <= 780
             ? <NavDrawer pathname={pathname}>
-                <button class="header__action">
-                  <i class="header__icon fa fa-bars"></i>
+                <button className="header__action">
+                  <i className="header__icon fa fa-bars"></i>
                 </button>
               </NavDrawer>
             : null

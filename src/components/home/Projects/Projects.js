@@ -14,7 +14,7 @@ import './projects.css'
 const Projects = () => {
   const data = useStaticQuery(graphql`
     query {
-      allProjectsJson {
+      allProjectsJson (sort: { order: ASC, fields: [order] }) {
         edges {
           node {
             name
