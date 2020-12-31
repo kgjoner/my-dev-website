@@ -2,7 +2,7 @@
 	height: 55px;
 	width: 65px;
 	color: var(--main-color);
-	mask-image: url('../../../images/logo.svg');
+	mask-image: url('../../../assets/img/logo.svg');
   background-color: var(--main-color);
 	mask-repeat: no-repeat;
 	mask-size: 100% 100%;

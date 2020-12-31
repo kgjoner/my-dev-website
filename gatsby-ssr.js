@@ -6,7 +6,7 @@ import System from './src/components/controllers/System'
 import Scroll from './src/components/controllers/Scroll'
 import { store } from './src/store'
 
-import './global.css'
+import './src/assets/css/global.css'
 import './src/assets/css/custom-icon.css'
 import 'font-awesome/css/font-awesome.css'
 

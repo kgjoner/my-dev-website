@@ -1,11 +1,9 @@
 import React, { useEffect } from "react"
 import { useDispatch } from 'react-redux'
-import { Link } from "gatsby"
 import { updateSections } from "../store/actions"
 import { homeSections } from "../constants/systemTypes"
 
 import SEO from '../components/seo'
-import Image from "../components/image"
 import Hero from '../components/home/Hero'
 import Projects from '../components/home/Projects'
 import Presentation from '../components/home/Techs'
@@ -31,9 +29,6 @@ const HomePage = () => {
       <Presentation />
       <Blog />
       <Contact />
-      {/* <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div> */}
     </>
   )
 }
