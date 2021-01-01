@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { graphql } from 'gatsby'
 import { updateSections } from '../store/actions'
 
+import { DiscussionEmbed as Disqus } from 'disqus-react'
 import SEO from '../components/seo'
 import NavDrawer from '../components/template/NavDrawer'
 import GoToTop from '../components/utils/GoToTop'
 import './post.css'
 
 
-const Post = ({ data, location }) => {
+const Post = ({ data, path, pathContext }) => {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
 
@@ -31,7 +32,7 @@ const Post = ({ data, location }) => {
       { windowWidth && windowWidth > 780
         ? <aside className="post__menu">
             <NavDrawer
-              pathname={location.pathname} 
+              pathname={path} 
               left  
             >
               <button className="post__side-btn">
@@ -64,10 +65,15 @@ const Post = ({ data, location }) => {
         >
         </div>
         <div className="post__comments">
-          {/* <Disqus
-            :identifier="$route.params.slug"
-            :url="'https://dev.kgjoner.com.br' + $route.fullPath.split('#')[0]"
-          ></Disqus> */}
+          <Disqus
+            shortname="kaiogabriel"
+            config={{
+              identifier: pathContext.slug,
+              url: 'https://dev.kgjoner.com.br' + path,
+              title: frontmatter.title,
+              language: 'en_US'
+            }}
+          ></Disqus>
         </div>
       </div>
 
