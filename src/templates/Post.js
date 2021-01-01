@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { graphql } from 'gatsby'
+import hljs from 'highlight.js'
 import { updateSections } from '../store/actions'
 
 import { DiscussionEmbed as Disqus } from 'disqus-react'
@@ -21,6 +22,10 @@ const Post = ({ data, path, pathContext }) => {
     const headings = markdownRemark.headings
       .filter(h => h.depth < 4)
     dispatch(updateSections(headings))
+
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block)
+    });
   }, [])
 
   return <>

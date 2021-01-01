@@ -8,6 +8,7 @@ import { store } from './src/store'
 
 import './src/assets/css/global.css'
 import './src/assets/css/custom-icon.css'
+import './src/assets/css/code-highlight.css'
 import 'font-awesome/css/font-awesome.css'
 
 
